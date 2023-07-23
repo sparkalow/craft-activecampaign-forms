@@ -1,0 +1,26 @@
+{# @var plugin \sparkalow\activecampaignforms\Plugin #}
+{# @var settings \sparkalow\activecampaignforms\models\Settings #}
+
+{% import '_includes/forms.twig' as forms %}
+{{ forms.textField({
+    first: true,
+    label: 'Account Name',
+    name: 'account',
+    required: true,
+    instructions: 'ActiveCampaign account name. Found in ActiveCampaign account settings.',
+    errors: settings.getErrors('account'),
+    value: settings.account
+}) }}
+
+
+{{ forms.textField({
+    label: 'API Key',
+    id: 'apiKey',
+    name: 'apiKey',
+    required: true,
+    instructions: 'ActiveCampaign API key. Found in ActiveCampaign developer settings.',
+    errors: settings.getErrors('apiKey'),
+    value: settings.apiKey})
+}}
+
+
