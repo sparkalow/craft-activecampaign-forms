@@ -2,6 +2,15 @@
     "name": "sparkalow/craft-activecampaign-forms",
     "description": "ActiveCampaign forms",
     "type": "craft-plugin",
+    "keywords": [
+        "craft",
+        "cms",
+        "craftcms",
+        "craft-plugin",
+        "ActiveCampaign",
+        "AC Forms",
+        "forms"
+    ],
     "license": "mit",
     "support": {
         "email": "support@slapthink.net",
