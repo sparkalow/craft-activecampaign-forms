@@ -15,7 +15,7 @@ class AcFormsVariable
      * @throws \Twig\Error\SyntaxError
      * @throws \yii\base\Exception
      */
-    public function renderForm(int $formId)
+    public function renderForm(string $formId )
     {
         echo Craft::$app->view->renderTemplate('ac-forms/form-embed.twig', [
             'formId' => $formId
