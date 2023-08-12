@@ -1,6 +1,6 @@
 {
     "name": "sparkalow/craft-activecampaign-forms",
-    "description": "ActiveCampaign forms",
+    "description": "ActiveCampaign form field for CraftCMS",
     "type": "craft-plugin",
     "keywords": [
         "craft",
@@ -9,9 +9,16 @@
         "craft-plugin",
         "ActiveCampaign",
         "AC Forms",
+        "Field Type",
         "forms"
     ],
     "license": "mit",
+    "authors": [
+        {
+            "name": "Brian Matthews",
+            "homepage": "https://slapthink.net"
+        }
+    ],
     "support": {
         "email": "support@slapthink.net",
         "issues": "https://github.com/sparkalow/craft-activecampaign-forms/issues?state=open",
@@ -34,8 +41,8 @@
     },
     "extra": {
         "handle": "activecampaign-forms",
-        "name": "Activecampaign Forms",
-        "developer": "Slapthink",
+        "name": "ActiveCampaign Forms",
+        "developer": "Brian Matthews",
         "documentationUrl": "https://github.com/sparkalow/craft-activecampaign-forms"
     },
     "scripts": {
