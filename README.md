@@ -1,6 +1,6 @@
 # ActiveCampaign Forms
 
-Easily add ActiveCampaign forms to entries with a new field type.
+Easily add [ActiveCampaign](https://www.activecampaign.com/) forms to entries with a custom field type.
 
 
 ## Requirements
@@ -61,3 +61,5 @@ Render a form from the field with:
 ```twig
  {{ craft.acforms.renderForm(entry.yourFieldHandle) | raw }}
 ```
+
+This will render the form using ActiveCampaign's "Simple Embed" markup.
