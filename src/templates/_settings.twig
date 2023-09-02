@@ -1,13 +1,15 @@
 {# @var plugin \sparkalow\activecampaignforms\Plugin #}
 {# @var settings \sparkalow\activecampaignforms\models\Settings #}
 
+
+
 {% import '_includes/forms.twig' as forms %}
 {{ forms.textField({
     first: true,
-    label: 'Account Name',
+    label: 'API URL',
     name: 'account',
     required: true,
-    instructions: 'ActiveCampaign account name. Found in ActiveCampaign account settings.',
+    instructions: 'Found in ActiveCampaign developer settings.',
     errors: settings.getErrors('account'),
     value: settings.account
 }) }}
@@ -18,9 +20,13 @@
     id: 'apiKey',
     name: 'apiKey',
     required: true,
-    instructions: 'ActiveCampaign API key. Found in ActiveCampaign developer settings.',
+    instructions: 'Found in ActiveCampaign developer settings.',
     errors: settings.getErrors('apiKey'),
     value: settings.apiKey})
 }}
 
 
+
+<p>
+    See the <a href="https://help.activecampaign.com/hc/en-us/articles/207317590-Getting-started-with-the-API">official docs</a> for more info on the ActiveCampaign API.
+</p>
