@@ -1,10 +1,10 @@
 # ActiveCampaign Forms
 
-Easily add [ActiveCampaign](https://www.activecampaign.com/) forms to entries with a custom field type. Then render the form with a simple twig method. 
+A new field type to easily add [ActiveCampaign](https://www.activecampaign.com/) forms to Craft CMS entries. Then render the form in your templates with a simple twig method. 
 Simplify managing embed snippets for content authors.
 
 
-> **Note:** This plugin is not affiliated with ActiveCampaign, Inc.
+> **Note:** This plugin is not affiliated with ActiveCampaign, Inc. It is provided by a 3rd party.
 
 
 ## Requirements
@@ -19,7 +19,7 @@ You can install this plugin from the Plugin Store or with Composer.
 
 #### From the Plugin Store
 
-Go to the Plugin Store in your project’s Control Panel and search for “ActiveCampaign Forms”. Then press “Install”.
+Go to the Plugin Store in your project’s Control Panel and search for “ActiveCampaign Forms”. Then click “Install”.
 
 #### With Composer
 
@@ -37,14 +37,17 @@ composer require sparkalow/craft-activecampaign-forms
 ```
 
 
-## Configuration
+## Setup
 
-You will need your ActiveCampaign account and API key. 
-
-See the [official docs](https://help.activecampaign.com/hc/en-us/articles/207317590-Getting-started-with-the-API) for how to find them in ActiveCampaign.
+Once the plugin is installed:
 
 
-Configuration can be managed  from **Settings** → **ActiveCampaign Forms**. 
+1. Go to **Settings** → **ActiveCampaign Forms**.
+2. Enter your ActiveCampaign **Account URL**.
+3. Enter your **API Key**.
+4. Click **Save**.
+
+>  See the [official docs](https://help.activecampaign.com/hc/en-us/articles/207317590-Getting-started-with-the-API) for in how to get your key.
 
 You can also create an `activecampaign-forms.php` config file in your `/config` directory with the following options.
 
@@ -57,6 +60,8 @@ return [
 ];
 ```
 
+>  See [Environmental Configuration](https://craftcms.com/docs/4.x/config/#environmental-configuration) in the Craft documentation to learn more.
+
 ## Usage
 
 This plugin provides a new field type for selecting forms created within ActiveCampaign. Create a new ActiveCampaign Form field and add it to entry types. 
@@ -66,4 +71,4 @@ Render a form from the field with:
  {{ craft.acforms.renderForm(entry.yourFieldHandle) | raw }}
 ```
 
-This will render the form using ActiveCampaign's "Simple Embed" markup.
+This will render the form using ActiveCampaign's "Simple Embed" markup. This is essentially the same as copy/pasting the embed snippet.
