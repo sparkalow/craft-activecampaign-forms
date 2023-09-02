@@ -1,4 +1,5 @@
-# Release Notes for Activecampaign Forms
+# Changelog
 
-## 1.0.0
+## 1.0.0 2023-09-02
+
 - Initial release
