@@ -18,7 +18,7 @@ class ActiveCampaignForm extends Dropdown
     }
 
     /**
-     * Get the input html.  Will return error states html if the field is not working properly
+     * Get the input html.  Will return error states in html if the field is not working properly
      * @param mixed $value
      * @param ElementInterface|null $element
      * @return string
