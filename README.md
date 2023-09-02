@@ -1,6 +1,6 @@
 # ActiveCampaign Forms
 
-Easily add [ActiveCampaign](https://www.activecampaign.com/) forms to entries with a custom field type.
+Easily add [ActiveCampaign](https://www.activecampaign.com/) forms to entries with a custom field type. Then render the form with a simple twig method. No more managing embed snippets.
 
 
 ## Requirements
