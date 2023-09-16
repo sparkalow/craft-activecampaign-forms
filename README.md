@@ -1,6 +1,6 @@
 # ActiveCampaign Forms
 
-A new field type to easily add [ActiveCampaign](https://www.activecampaign.com/) forms to Craft CMS entries. Then render the form in your templates with a simple twig method. 
+A new field type to easily add [ActiveCampaign](https://www.activecampaign.com/) forms to Craft CMS entries. Render the form in your templates with a simple twig method. 
 Simplify managing embed snippets for content authors.
 
 
