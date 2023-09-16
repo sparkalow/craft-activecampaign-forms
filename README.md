@@ -15,11 +15,11 @@ An ActiveCampaign account is also necessary.
 
 ## Installation
 
-You can install this plugin from the Plugin Store or with Composer.
+You can install this plugin via the Plugin Store or using Composer.
 
 #### From the Plugin Store
 
-Go to the Plugin Store in your project’s Control Panel and search for “ActiveCampaign Forms”. Then click “Install”.
+Go to the Plugin Store in your project’s Control Panel or the web version and search for “ActiveCampaign Forms”. Then click “Install”.
 
 #### With Composer
 
@@ -47,9 +47,9 @@ Once the plugin is installed:
 3. Enter your **API Key**.
 4. Click **Save**.
 
->  See the [official docs](https://help.activecampaign.com/hc/en-us/articles/207317590-Getting-started-with-the-API) for in how to get your key.
+>  See the [official docs](https://help.activecampaign.com/hc/en-us/articles/207317590-Getting-started-with-the-API) for info on how to get your key.
 
-You can also create an `activecampaign-forms.php` config file in your `/config` directory with the following options.
+Alternatively, you can also create an `activecampaign-forms.php` config file in your `/config` directory with the following options.
 
 ```php
 <?php
@@ -64,9 +64,9 @@ return [
 
 ## Usage
 
-This plugin provides a new field type for selecting forms created within ActiveCampaign. Create a new ActiveCampaign Form field and add it to entry types. 
+This plugin provides a new field type for selecting forms created on the ActiveCampaign platform. Create a new ActiveCampaign form field and add it to your entry types. 
 
-Render a form from the field with:
+Render a form field with:
 ```twig
  {{ craft.acforms.renderForm(entry.yourFieldHandle) | raw }}
 ```
