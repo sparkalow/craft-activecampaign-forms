@@ -18,8 +18,12 @@ class AcFormsVariable
      */
     public function renderForm(string $formId )
     {
+        //$foo = \mynamespace\Plugin::getInstance()->getSettings()->foo;
+        $account = \sparkalow\activecampaignforms\Plugin::getInstance()->getSettings()->account;
+
         echo Craft::$app->view->renderTemplate('ac-forms/form-embed.twig', [
-            'formId' => $formId
+            'formId' => $formId,
+            'account' => $account
         ]);
     }
 }
