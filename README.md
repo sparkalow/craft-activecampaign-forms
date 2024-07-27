@@ -9,7 +9,7 @@ Simplify managing embed snippets for content authors.
 
 ## Requirements
 
-This plugin requires Craft CMS 4.4.0 or later, and PHP 8.0.2 or later. 
+This plugin requires Craft CMS 4.4.0, 5.0.0 or later, and PHP 8.0.2 or later. 
 
 An ActiveCampaign account is also necessary.
 
@@ -47,7 +47,7 @@ Once the plugin is installed:
 3. Enter your **API Key**.
 4. Click **Save**.
 
->  See the [official docs](https://help.activecampaign.com/hc/en-us/articles/207317590-Getting-started-with-the-API) for info on how to get your key.
+>  See the [official docs](https://help.activecampaign.com/hc/en-us/articles/207317590-Getting-started-with-the-API) for info on how to get your API info.
 
 Alternatively, you can also create an `activecampaign-forms.php` config file in your `/config` directory with the following options.
 
@@ -57,6 +57,7 @@ Alternatively, you can also create an `activecampaign-forms.php` config file in 
 return [
     'account' => 'your_account_url',
     'apiKey' => 'your_api_key',
+    'apiCacheDuration' => 0
 ];
 ```
 
@@ -66,7 +67,7 @@ return [
 
 This plugin provides a new field type for selecting forms created on the ActiveCampaign platform. Create a new ActiveCampaign form field and add it to your entry types. 
 
-Render a form field with:
+Once a form is set on an entry, render a form field on the frontend with:
 ```twig
  {{ craft.acforms.renderForm(entry.yourFieldHandle) | raw }}
 ```

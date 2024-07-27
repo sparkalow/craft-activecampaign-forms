@@ -12,12 +12,14 @@ class Settings extends Model
 {
     public $account ='';
     public $apiKey ='';
+    public $apiCacheDuration = 0;
 
 
     public function defineRules(): array
     {
         return [
-            [['account','apiKey'],'required']
+            [['account','apiKey'],'required'],
+            [['apiCacheDuration'],'numeric']
         ];
     }
 }

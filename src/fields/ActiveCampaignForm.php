@@ -16,7 +16,7 @@ class ActiveCampaignForm extends Dropdown
     {
         return Craft::t('activecampaign-forms', 'ActiveCampaign Form');
     }
-
+    
     /**
      * Get the input html. Will return error states in html if the api settings are not configured
      * @param mixed $value
@@ -28,12 +28,12 @@ class ActiveCampaignForm extends Dropdown
         $settings = Plugin::$plugin->getSettings();
 
         //  missing credentials
-        if (!$settings->apiKey || !$settings->account){
+        if (!$settings->apiKey || !$settings->account) {
             return sprintf('You must setup your ActiveCampaign API key in <a href="%s">plugin settings</a>.', Plugin::getInstance()->getSettingsUrl());
         }
         // a network error or bad credentials
-        if (empty($this->options)){
-            return  sprintf('error - No forms found. Are the correct ActiveCampaign API credentials used in <a href="%s">settings</a>?',Plugin::getInstance()->getSettingsUrl());
+        if (empty($this->options)) {
+            return  sprintf('error - No forms found. Are the correct ActiveCampaign API credentials used in <a href="%s">settings</a>?', Plugin::getInstance()->getSettingsUrl());
         }
         return parent::getInputHtml($value, $element);
     }
@@ -55,7 +55,20 @@ class ActiveCampaignForm extends Dropdown
     protected function options(): array
     {
         try {
-            $forms = Plugin::getInstance()->activeCampaignApI->get('forms');
+            $settings = Plugin::$plugin->getSettings();
+            
+            if($settings->apiCacheDuration){
+                $cacheKey = 'craft-activecampaign-forms';
+                
+                // thic call is cached
+                $forms = \Craft::$app->cache->getOrSet($cacheKey, function () {
+                    return Plugin::getInstance()->activeCampaignApI->get('forms');
+                }, $settings->apiCacheDuration);
+
+            }else{
+                $forms = Plugin::getInstance()->activeCampaignApI->get('forms');
+            }
+
             $options = [];
             foreach ($forms->forms as $key => $formObj) {
                 $options[] = [
@@ -64,7 +77,6 @@ class ActiveCampaignForm extends Dropdown
                 ];
             }
             $this->options = $options;
-
         } catch (\Exception $e) {
             Craft::error($e->getMessage(), __METHOD__);
         }

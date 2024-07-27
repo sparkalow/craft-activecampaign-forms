@@ -25,6 +25,24 @@
     value: settings.apiKey})
 }}
 
+<hr>
+
+<p>
+    API calls are only made to ActiveCampaign when loading an entry 
+    for editing in the control panel (not the frontend). Configure a cache time below if needed.
+    <br>Most sites do not need to alter the default setting.
+</p>
+{{ forms.textField({
+    label: 'ActiveCampaign Cache Duration',
+    id: 'apiCacheDuration',
+    type: 'number',
+    name: 'apiCacheDuration',
+    required: false,
+    instructions: 'How long in seconds to cache api requests.',
+    errors: settings.getErrors('apiCacheDuration'),
+    value: settings.apiCacheDuration})
+}}
+
 
 
 <p>
